@@ -8,6 +8,7 @@ import java.util.Objects;
 
 public abstract class PaperWithText implements Readable, Liftable{
     public abstract String getText();
+    public abstract String getName();
 
     @Override
     public String toString() {

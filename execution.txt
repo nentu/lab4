@@ -1,0 +1,5 @@
+javac -d ./build/classes/ ./scr/story/*.java ./scr/story/abstractions/*.java ./scr/story/interfaces/*.java ./scr/story/smth/*.java 
+cd build
+echo -e "Main-Class: story.Main\n" > MANIFEST.MF
+
+jar -cvfm lab3.jar MANIFEST.MF -C ./classes/ .

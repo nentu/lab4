@@ -14,7 +14,7 @@ public class Goat extends OurFriend {
     }
 
     //мои методы
-    public void lift(Letter obj){
+    public void lift(PaperWithText obj){
         System.out.print("поднял "+obj.getName());
         obj.setIsLifted(true);
         this.inHandObject = obj;
