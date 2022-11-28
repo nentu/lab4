@@ -1,13 +1,24 @@
 package story;
 
 
-import java.lang.annotation.Inherited;
+import story.abstractions.Place;
+import story.abstractions.Сharacter;
 import java.util.Objects;
 
-public class Julio extends OurFriend {
+public class Julio extends Сharacter {
 
     private String name = "Жулио";
     private String estate;
+
+    private Place currentPlace;
+
+    public Place getCurrentPlace() {
+        return currentPlace;
+    }
+
+    public void setCurrentPlace(Place currentPlace) {
+        this.currentPlace = currentPlace;
+    }
 
     public Julio(String name, String estate){
         this.name = name;

@@ -9,6 +9,7 @@ public class Main {
     public static void main(String[] args){
         Goat goat = new Goat("Козлик");
 
+
         Letter letter = new Letter(new Address(new Place("Крученая", TypeOfPlaсe.STREET, Case.NOMINATIVE),
                 new Place("Змеиный", TypeOfPlaсe.LANE, Case.NOMINATIVE), 6),
 
