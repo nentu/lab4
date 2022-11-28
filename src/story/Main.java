@@ -59,7 +59,7 @@ public class Main {
         
         rays.lost(new Place("верхних", TypeOfPlaсe.FLOOR, Case.PREPOSITIONAL));
         
-        System.out.print(",благодяра чему ");
+        System.out.print(",благодаря чему ");
 
         Illumination illumination = new Illumination(TypeOfIllumination.TWILIGHT, "таинственный");
 

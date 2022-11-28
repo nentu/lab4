@@ -11,7 +11,7 @@ public class Letter extends PaperWithText {
 
     private Address adr;
     private Сharacter recipient;
-    final static String NAME = "письмо";
+    final String NAME = "письмо";
 
     private boolean isLifted = false;
 

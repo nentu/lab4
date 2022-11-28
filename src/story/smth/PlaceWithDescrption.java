@@ -28,7 +28,7 @@ public class PlaceWithDescrption extends Place {
         if (!isReversed){
         return getDescripton()+" "+super.getPlace(isReversed);}
         else {
-            return super.getPlace(isReversed)+", "+getDescripton()+", ";
+            return super.getPlace(isReversed)+", "+getDescripton();
         }
     }
 

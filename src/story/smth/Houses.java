@@ -19,11 +19,11 @@ public class Houses {
         this.locationPlace = locationPlace;
         this.locationDesc = description;
 
-        System.out.print(this.getLocationPlace()+' ');
+        System.out.print(String.format("%s стояли %s ", locationPlace.getPlace(false), this.locationDesc)+' ');
     }
 
-    public String getLocationPlace() {
-        return String.format("%s стояли %s ", locationPlace.getPlace(false), this.locationDesc);
+    public Place getLocationPlace() {
+        return this.locationPlace;
     }
 
     public String getName(){

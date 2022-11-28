@@ -4,7 +4,7 @@ import java.util.Objects;
 
 public class Hat {
 
-    private final static String NAME = "шляпу";
+    private final String NAME = "шляпу";
 
 
     public String getName(){

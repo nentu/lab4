@@ -5,7 +5,7 @@ import story.abstractions.Сharacter;
 import java.util.Objects;
 
 public class OurFriend extends Сharacter {
-    private static String NAME = "наши друзья";
+    private final String NAME = "наши друзья";
     protected Place currentPlace = new Place("Начало");
 
     public OurFriend() {
