@@ -1,4 +1,5 @@
 package story.smth;
+import story.Viewer;
 
 import story.abstractions.Place;
 
@@ -12,14 +13,14 @@ public class Houses {
     private String locationDesc;
 
     public Houses(){
-        System.out.print(this.getName()+' ');
+        Viewer.view(this.getName()+' ');
     }
 
     public void arrange(Place locationPlace, String description){
         this.locationPlace = locationPlace;
         this.locationDesc = description;
 
-        System.out.print(String.format("%s стояли %s ", locationPlace.getPlace(false), this.locationDesc)+' ');
+        Viewer.view(String.format("%s стояли %s ", locationPlace.getPlace(false), this.locationDesc)+' ');
     }
 
     public Place getLocationPlace() {

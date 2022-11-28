@@ -9,20 +9,21 @@ public class Dunno extends OurFriend {
 
     private final String name;
 
+
     public Dunno(String name){
         this.name = name;
-        System.out.print(getName());
+        Viewer.view(getName());
     }
 
     public void pull(Hat hat, Head head){
-        System.out.print(String.format("%s натянул потуже на %s", hat.getName(), head.getName()));
+        Viewer.view(String.format("%s натянул потуже на %s", hat.getName(), head.getName()));
     }
     public String getName(){
         return this.name;
     }
 
     public void hideLetterAgain(Letter letter, Hat hat){
-        System.out.print(String.format("спрятал %s обратно в %s", letter.getName(), hat.getName()));
+        Viewer.view(String.format("спрятал %s обратно в %s", letter.getName(), hat.getName()));
     }
 
 

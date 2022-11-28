@@ -10,12 +10,12 @@ public class Goat extends OurFriend {
 
     public Goat(String name){
         this.name = name;
-        System.out.print(this.getName()+" ");
+        Viewer.view(this.getName()+" ");
     }
 
     //мои методы
     public void lift(PaperWithText obj){
-        System.out.print("поднял "+obj.getName());
+        Viewer.view("поднял "+obj.getName());
         obj.setIsLifted(true);
         this.inHandObject = obj;
     }
@@ -25,7 +25,7 @@ public class Goat extends OurFriend {
     }
 
     public void readFromHand(){
-        System.out.print("прочитал написанный на нём aдрес \"" +this.inHandObject.getText()+'"');
+        Viewer.view("прочитал написанный на нём aдрес \"" +this.inHandObject.getText()+'"');
     }
 
     //технические методы

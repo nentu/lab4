@@ -14,12 +14,12 @@ public class OurFriend extends Сharacter {
     //перемещения
     public void arrive(Place place){
         setCurrentPlace(place);
-        System.out.print(String.format("добрались до %s ", place.getPlace(false)));
+        Viewer.view(String.format("добрались до %s ", place.getPlace(false)));
     }
 
     public void turn(Place place){
         setCurrentPlace(place);
-        System.out.print(String.format("свернули в \n%s. ", place.getPlace(false)));
+        Viewer.view(String.format("свернули в \n%s. ", place.getPlace(false)));
     }
 
     //Setters, Getters
@@ -35,7 +35,7 @@ public class OurFriend extends Сharacter {
     }
 
     public void printName(){
-        System.out.print(this.getName()+' ');
+        Viewer.view(this.getName()+' ');
     }
 
     //Others

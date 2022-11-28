@@ -1,4 +1,5 @@
 package story.abstractions;
+import story.Viewer;
 
 import story.smth.TimePast;
 
@@ -9,7 +10,7 @@ public class Time {
     }
 
     public static void past(TimePast time){
-        System.out.printf("Через %s ", time.getText());
+        Viewer.view(String.format("Через %s ", time.getText()));
     }
 
     @Override

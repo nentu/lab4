@@ -1,4 +1,5 @@
 package story.smth;
+import story.Viewer;
 
 import story.abstractions.Place;
 
@@ -10,12 +11,12 @@ public class Rays {
 
     public Rays(TypeOfRays typesOfRays){
         name = typesOfRays.getName();
-        System.out.print(this.getName()+' ');
+        Viewer.view(this.getName()+' ');
     }
 
     public void lost(Place place){
         this.lostPlace = place;
-        System.out.print(this.getLostPlaceString()+' ');
+        Viewer.view(this.getLostPlaceString()+' ');
     }
 
     public String getName() {

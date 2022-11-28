@@ -1,4 +1,5 @@
 package story;
+import story.Viewer;
 
 import story.smth.PlaceWithDescrption;
 import story.abstractions.Place;
@@ -17,11 +18,11 @@ public class Main {
 
         goat.lift(letter);
 
-        System.out.print(" и ");
+        Viewer.view(" и ");
 
         goat.readFromHand();
 
-        System.out.println(". ");
+        Viewer.view(". ");
 
         Dunno dunno = new Dunno("Незнайка ");
 
@@ -29,11 +30,11 @@ public class Main {
 
         dunno.hideLetterAgain(letter, hat);
 
-        System.out.print(", а ");
+        Viewer.view(", а ");
 
         dunno.pull(hat, new Head());
 
-        System.out.print(". ");
+        Viewer.view(". ");
 
         Time.past(TimePast.MINS30);
 
@@ -43,7 +44,7 @@ public class Main {
 
         friend.arrive(new Place("Крученой", TypeOfPlaсe.STREET, Case.GENITIVE));
 
-        System.out.print("и ");
+        Viewer.view("и ");
 
         PlaceWithDescrption narrowLane = new PlaceWithDescrption("", TypeOfPlaсe.LANE, Case.NOMINATIVE,
                 "узенький", "змеей извивавшийся среди высоких домов,");
@@ -54,13 +55,13 @@ public class Main {
         houses.arrange(new Place("по обеим сторонам", TypeOfPlaсe.LANE, Case.GENITIVE), "так" +
                 " близко друг к другу");
         
-        System.out.print(", что \n");
+        Viewer.view(", что \n");
 
         Rays rays = new Rays(TypeOfRays.LIGHT);
         
         rays.lost(new Place("верхних", TypeOfPlaсe.FLOOR, Case.PREPOSITIONAL));
         
-        System.out.print(",благодаря чему ");
+        Viewer.view(",благодаря чему ");
 
         Illumination illumination = new Illumination(TypeOfIllumination.TWILIGHT, "таинственный");
 

@@ -29,3 +29,9 @@ public class Head {
         return Objects.hash(getClass(), getName());
     }
 }
+/*TODO
+1) class viewer
+2) toString
+3) getClass?? (как можно сравнить название классов не вызывая этот метод)
+4) equals
+ */

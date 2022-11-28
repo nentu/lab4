@@ -1,7 +1,7 @@
 package story.smth;
 
 import story.abstractions.Place;
-
+import story.Viewer;
 import java.util.Objects;
 
 public class Illumination {
@@ -13,7 +13,7 @@ public class Illumination {
         this.illuminationType = type;
         this.description = desc;
 
-        System.out.print(getName()+' ');
+        Viewer.view(getName()+' ');
 
     }
 
@@ -29,7 +29,7 @@ public class Illumination {
         return currentPlace;
     }
     public void reign(){
-        System.out.print(String.format("царил %s", getCurrentPlace().getPlace(true)));
+        Viewer.view(String.format("царил %s", getCurrentPlace().getPlace(true)));
     }
 
     @Override
