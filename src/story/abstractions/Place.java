@@ -6,6 +6,7 @@ import story.smth.TypeOfPlaсe;
 import java.util.Objects;
 
 public class Place {
+    public String getClassName(){return "Place";}
     private String placeName;
     private TypeOfPlaсe placeType;
     private Case placeTypeCase;
@@ -42,19 +43,19 @@ public class Place {
     @Override
     public boolean equals(Object otherObject) {
         if (this == otherObject) return true;
-        if (otherObject == null || getClass() != otherObject.getClass()) return false;
+        if (!(otherObject instanceof Place)) return false;
         Place place = (Place) otherObject;
         return Objects.equals(getPlaceName(), place.getPlaceName()) && getPlaceType() == place.getPlaceType() && getPlaceTypeCase() == place.getPlaceTypeCase();
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(getClass(), getPlaceName(), getPlaceType(), getPlaceTypeCase());
+        return Objects.hash(getClassName(), getPlaceName(), getPlaceType(), getPlaceTypeCase());
     }
 
     @Override
     public String toString() {
-        return getClass().getName()+"{" +
+        return getClassName()+"{" +
                 "placeName=\"" + getPlaceName() + '"' +
                 ", placeType=" + getPlaceType() +
                 ", placeTypeCase=" + getPlaceTypeCase() +

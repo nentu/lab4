@@ -5,6 +5,7 @@ import story.abstractions.Сharacter;
 import java.util.Objects;
 
 public class OurFriend extends Сharacter {
+    public String getClassName(){return "OurFriend";}
     private final String NAME = "наши друзья";
     protected Place currentPlace = new Place("Начало");
 

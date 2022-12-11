@@ -6,6 +6,7 @@ import story.smth.TimePast;
 import java.util.Objects;
 
 public class Time {
+    public String getClassName(){return "Time";}
     public Time(){
     }
 
@@ -15,16 +16,16 @@ public class Time {
 
     @Override
     public String toString() {
-        return getClass().getName()+"{}";
+        return getClassName()+"{}";
     }
 
     @Override
     public boolean equals(Object other){
-        return other.getClass().equals(getClass());
+        return other instanceof Time;
     }
 
     @Override
     public int hashCode(){
-        return getClass().hashCode();
+        return getClassName().hashCode();
     }
 }

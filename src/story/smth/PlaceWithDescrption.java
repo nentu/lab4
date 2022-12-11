@@ -4,7 +4,8 @@ import story.abstractions.Place;
 
 import java.util.Arrays;
 
-public class PlaceWithDescrption extends Place {
+public class PlaceWithDescrption extends Place{
+    public String getClassName(){return "PlaceWithDescrption";}
 
     private String[] desc;
 
@@ -35,7 +36,7 @@ public class PlaceWithDescrption extends Place {
     @Override
     public boolean equals(Object otherObject) {
         if (this == otherObject) return true;
-        if (otherObject == null || getClass() != otherObject.getClass()) return false;
+        if (!(otherObject instanceof PlaceWithDescrption)) return false;
         if (!super.equals(otherObject)) return false;
         PlaceWithDescrption that = (PlaceWithDescrption) otherObject;
         return Arrays.equals(desc, that.desc);

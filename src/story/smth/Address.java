@@ -4,7 +4,8 @@ import story.abstractions.Place;
 
 import java.util.Objects;
 
-public class Address extends Place {
+public class Address extends Place{
+    public String getClassName(){return "Address";}
     private String lane;
     private int houseNumber;
 
@@ -22,14 +23,14 @@ public class Address extends Place {
     @Override
     public boolean equals(Object otherObject) {
         if (this == otherObject) return true;
-        if (otherObject == null || getClass() != otherObject.getClass()) return false;
+        if (!(otherObject instanceof Address)) return false;
         Address address = (Address) otherObject;
         return houseNumber == address.houseNumber && Objects.equals(lane, address.lane) && getPlace(false).equals(address.getPlace(false));
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(getClass(), lane, houseNumber);
+        return Objects.hash(getClassName(), lane, houseNumber);
     }
 
     @Override

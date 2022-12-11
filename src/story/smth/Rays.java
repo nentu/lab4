@@ -6,6 +6,7 @@ import story.abstractions.Place;
 import java.util.Objects;
 
 public class Rays {
+    public String getClassName(){return "Rays";}
     private String name;
     private Place lostPlace;
 
@@ -34,19 +35,19 @@ public class Rays {
     @Override
     public boolean equals(Object otherObject) {
         if (this == otherObject) return true;
-        if (otherObject == null || getClass() != otherObject.getClass()) return false;
+        if (!(otherObject instanceof Rays)) return false;
         Rays rays = (Rays) otherObject;
         return Objects.equals(getName(), rays.getName()) && Objects.equals(getLostPlace(), rays.getLostPlace());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(getClass(), getName(), getLostPlace());
+        return Objects.hash(getClassName(), getName(), getLostPlace());
     }
 
     @Override
     public String toString() {
-        return getClass().getName()+"{" +
+        return getClassName()+"{" +
                 "name='" + name + '\'' +
                 ", lostPlace=" + lostPlace +
                 '}';

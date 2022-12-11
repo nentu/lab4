@@ -3,6 +3,7 @@ package story.smth;
 import java.util.Objects;
 
 public class Hat {
+    public String getClassName(){return "Hat";}
 
     private final String NAME = "шляпу";
 
@@ -13,13 +14,13 @@ public class Hat {
 
     @Override
     public String toString() {
-        return getClass().getName()+"{name=\""+getName()+"\"}";
+        return getClassName()+"{name=\""+getName()+"\"}";
     }
 
     @Override
     public boolean equals(Object otherObject){
         if (this == otherObject) return true;
-        if (otherObject == null || (!getClass().equals(otherObject.getClass()))) return false;
+        if (!(otherObject instanceof Hat)) return false;
         else {
             Hat hat = (Hat) otherObject;
             return getName().equals(hat.getName());
@@ -28,6 +29,6 @@ public class Hat {
 
     @Override
     public int hashCode(){
-        return Objects.hash(getClass(), getName());
+        return Objects.hash(getClassName(), getName());
     }
 }

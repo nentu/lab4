@@ -6,6 +6,7 @@ import story.abstractions.Place;
 import java.util.Objects;
 
 public class Houses {
+    public String getClassName(){return "Houses";}
 
     private final String NAME = "Дома";
 
@@ -34,7 +35,7 @@ public class Houses {
     @Override
     public boolean equals(Object otherObject) {
         if (this == otherObject) return true;
-        if (otherObject == null || getClass() != otherObject.getClass()) return false;
+        if (!(otherObject instanceof Houses)) return false;
         Houses houses = (Houses) otherObject;
         return Objects.equals(getLocationPlace(), houses.getLocationPlace()) && Objects.equals(locationDesc, houses.locationDesc);
     }
@@ -46,7 +47,7 @@ public class Houses {
 
     @Override
     public String toString() {
-        return getClass().getName()+"{" +
+        return getClassName()+"{" +
                 "NAME='" + NAME + '\'' +
                 ", locationPlace=" + locationPlace +
                 ", locationDesc='" + locationDesc + '\'' +

@@ -7,7 +7,8 @@ import story.smth.Address;
 
 import java.util.Objects;
 
-public class Letter extends PaperWithText {
+public class Letter extends PaperWithText{
+    public String getClassName(){return "Letter";}
 
     private Address adr;
     private Сharacter recipient;
@@ -40,7 +41,7 @@ public class Letter extends PaperWithText {
     @Override
     public boolean equals(Object otherObject) {
         if (this == otherObject) return true;
-        if (otherObject == null || getClass() != otherObject.getClass()) return false;
+        if (!(otherObject instanceof Letter)) return false;
         Letter letter = (Letter) otherObject;
         return Objects.equals(adr, letter.adr) && Objects.equals(recipient, letter.recipient);
     }

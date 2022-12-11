@@ -5,7 +5,8 @@ import story.abstractions.Place;
 import story.abstractions.Сharacter;
 import java.util.Objects;
 
-public class Julio extends Сharacter {
+public class Julio extends Сharacter{
+    public String getClassName(){return "Julio";}
 
     private String name = "Жулио";
     private String estate;
@@ -37,7 +38,7 @@ public class Julio extends Сharacter {
     @Override
     public boolean equals(Object otherObject) {
         if (this == otherObject) return true;
-        if (otherObject == null || getClass() != otherObject.getClass()) return false;
+        if (!(otherObject instanceof Julio)) return false;
         if (!super.equals(otherObject)) return false;
         Julio julio = (Julio) otherObject;
         return Objects.equals(getName(), julio.getName()) && Objects.equals(estate, julio.estate);

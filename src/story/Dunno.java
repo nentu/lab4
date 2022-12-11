@@ -5,7 +5,8 @@ import story.smth.Head;
 
 import java.util.Objects;
 
-public class Dunno extends OurFriend {
+public class Dunno {
+    public String getClassName(){return "Dunno";}
 
     private final String name;
 
@@ -30,7 +31,7 @@ public class Dunno extends OurFriend {
     @Override
     public boolean equals(Object otherObject) {
         if (this == otherObject) return true;
-        if (otherObject == null || getClass() != otherObject.getClass()) return false;
+        if (!(otherObject instanceof Dunno)) return false;
         if (!super.equals(otherObject)) return false;
         Dunno dunno = (Dunno) otherObject;
         return Objects.equals(getName(), dunno.getName());

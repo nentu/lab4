@@ -5,6 +5,7 @@ import story.Viewer;
 import java.util.Objects;
 
 public class Illumination {
+    public String getClassName(){return "Illumination";}
     private TypeOfIllumination illuminationType;
     private String description;
     private Place currentPlace;
@@ -35,19 +36,19 @@ public class Illumination {
     @Override
     public boolean equals(Object otherObject) {
         if (this == otherObject) return true;
-        if (otherObject == null || getClass() != otherObject.getClass()) return false;
+        if (!(otherObject instanceof Illumination)) return false;
         Illumination illumination = (Illumination) otherObject;
         return illuminationType == illumination.illuminationType && Objects.equals(description, illumination.description) && Objects.equals(getCurrentPlace(), illumination.getCurrentPlace());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(getClass(), illuminationType, description, getCurrentPlace());
+        return Objects.hash(getClassName(), illuminationType, description, getCurrentPlace());
     }
 
     @Override
     public String toString() {
-        return getClass().getName()+"{" +
+        return getClassName()+"{" +
                 "illuminationType=" + illuminationType +
                 ", description='" + description + '\'' +
                 ", currentPlace=" + currentPlace +
