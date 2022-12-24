@@ -10,8 +10,8 @@ public class Time {
     public Time(){
     }
 
-    public static void past(TimePast time){
-        Viewer.view(String.format("Через %s ", time.getText()));
+    public static String past(TimePast time){
+        return String.format("Через %s ", time.getText());
     }
 
     @Override

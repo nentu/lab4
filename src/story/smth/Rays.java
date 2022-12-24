@@ -12,12 +12,11 @@ public class Rays {
 
     public Rays(TypeOfRays typesOfRays){
         name = typesOfRays.getName();
-        Viewer.view(this.getName()+' ');
     }
 
-    public void lost(Place place){
+    public String lost(Place place){
         this.lostPlace = place;
-        Viewer.view(this.getLostPlaceString()+' ');
+        return this.getLostPlaceString()+' ';
     }
 
     public String getName() {

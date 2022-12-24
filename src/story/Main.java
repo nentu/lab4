@@ -8,7 +8,11 @@ import story.abstractions.Time;
 
 public class Main {
     public static void main(String[] args){
+        Viewer viewer = new Viewer();
+
         Goat goat = new Goat("Козлик");
+
+        viewer.view(goat.getName()+" ");
 
         Letter letter = new Letter(new Address(new Place("Крученая", TypeOfPlaсe.STREET, Case.NOMINATIVE),
                 new Place("Змеиный", TypeOfPlaсe.LANE, Case.NOMINATIVE), 6),
@@ -16,60 +20,68 @@ public class Main {
                 new Julio("Жулио", "владельцу магазина разнокалиберных товаров господину"));
 
 
-        goat.lift(letter);
+        viewer.view(goat.lift(letter));
 
-        Viewer.view(" и ");
+        viewer.view(" и ");
 
-        goat.readFromHand();
+        viewer.view(goat.readFromHand());
 
-        Viewer.view(". ");
+        viewer.view(". ");
 
-        Dunno dunno = new Dunno("Незнайка ");
+        Dunno dunno = new Dunno("Незнайка");
+        viewer.view(dunno.getName() + " ");
+
 
         Hat hat = new Hat();
 
-        dunno.hideLetterAgain(letter, hat);
+        viewer.view(dunno.hideLetterAgain(letter, hat));
 
-        Viewer.view(", а ");
+        viewer.view(", а ");
 
-        dunno.pull(hat, new Head());
+        viewer.view(dunno.pull(hat, new Head()));
 
-        Viewer.view(". ");
+        viewer.view(". ");
 
-        Time.past(TimePast.MINS30);
+        viewer.view(Time.past(TimePast.MINS30));
 
         OurFriend friend = new OurFriend();
 
-        friend.printName();
+        viewer.view(friend.getName() + " ");
 
-        friend.arrive(new Place("Крученой", TypeOfPlaсe.STREET, Case.GENITIVE));
+        viewer.view(friend.arrive(new Place("Крученой", TypeOfPlaсe.STREET, Case.GENITIVE)));
 
-        Viewer.view("и ");
+        viewer.view("и ");
 
         PlaceWithDescrption narrowLane = new PlaceWithDescrption("", TypeOfPlaсe.LANE, Case.NOMINATIVE,
                 "узенький", "змеей извивавшийся среди высоких домов,");
 
-        friend.turn(narrowLane);
+        viewer.view(friend.turn(narrowLane));
 
         Houses houses = new Houses();
-        houses.arrange(new Place("по обеим сторонам", TypeOfPlaсe.LANE, Case.GENITIVE), "так" +
-                " близко друг к другу");
+        viewer.view(houses.getName() + " ");
+
+        viewer.view(houses.arrange(new Place("по обеим сторонам", TypeOfPlaсe.LANE, Case.GENITIVE), "так" +
+                " близко друг к другу"));
         
-        Viewer.view(", что \n");
+        viewer.view(", что \n");
 
         Rays rays = new Rays(TypeOfRays.LIGHT);
+
+        viewer.view(rays.getName() + " ");
         
-        rays.lost(new Place("верхних", TypeOfPlaсe.FLOOR, Case.PREPOSITIONAL));
+        viewer.view(rays.lost(new Place("верхних", TypeOfPlaсe.FLOOR, Case.PREPOSITIONAL)));
         
-        Viewer.view(",благодаря чему ");
+        viewer.view(",благодаря чему ");
 
         Illumination illumination = new Illumination(TypeOfIllumination.TWILIGHT, "таинственный");
+
+        viewer.view(illumination.getName() + " ");
 
         illumination.setCurrentPlace(new PlaceWithDescrption("", TypeOfPlaсe.BOTTOM, Case.PREPOSITIONAL, "где" +
                 " были расположены многочисленные" +
                 " магазины."));
 
-        illumination.reign();
+        viewer.view(illumination.reign());
 
     }
 }

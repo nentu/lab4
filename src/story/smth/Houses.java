@@ -13,15 +13,12 @@ public class Houses {
     private Place locationPlace;
     private String locationDesc;
 
-    public Houses(){
-        Viewer.view(this.getName()+' ');
-    }
 
-    public void arrange(Place locationPlace, String description){
+    public String arrange(Place locationPlace, String description){
         this.locationPlace = locationPlace;
         this.locationDesc = description;
 
-        Viewer.view(String.format("%s стояли %s ", locationPlace.getPlace(false), this.locationDesc)+' ');
+        return String.format("%s стояли %s ", locationPlace.getPlace(false), this.locationDesc)+' ';
     }
 
     public Place getLocationPlace() {

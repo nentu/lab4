@@ -13,10 +13,7 @@ public class Illumination {
     public Illumination(TypeOfIllumination type, String desc){
         this.illuminationType = type;
         this.description = desc;
-
-        Viewer.view(getName()+' ');
-
-    }
+        }
 
     public String getName(){
         return this.description+' '+this.illuminationType.getName();
@@ -29,8 +26,8 @@ public class Illumination {
     public Place getCurrentPlace() {
         return currentPlace;
     }
-    public void reign(){
-        Viewer.view(String.format("царил %s", getCurrentPlace().getPlace(true)));
+    public String reign(){
+        return String.format("царил %s", getCurrentPlace().getPlace(true));
     }
 
     @Override

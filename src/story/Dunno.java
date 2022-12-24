@@ -13,18 +13,17 @@ public class Dunno {
 
     public Dunno(String name){
         this.name = name;
-        Viewer.view(getName());
     }
 
-    public void pull(Hat hat, Head head){
-        Viewer.view(String.format("%s натянул потуже на %s", hat.getName(), head.getName()));
+    public String pull(Hat hat, Head head){
+        return String.format("%s натянул потуже на %s", hat.getName(), head.getName());
     }
     public String getName(){
         return this.name;
     }
 
-    public void hideLetterAgain(Letter letter, Hat hat){
-        Viewer.view(String.format("спрятал %s обратно в %s", letter.getName(), hat.getName()));
+    public String hideLetterAgain(Letter letter, Hat hat){
+        return String.format("спрятал %s обратно в %s", letter.getName(), hat.getName());
     }
 
 

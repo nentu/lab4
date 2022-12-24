@@ -11,22 +11,22 @@ public class Goat extends OurFriend{
 
     public Goat(String name){
         this.name = name;
-        Viewer.view(this.getName()+" ");
+
     }
 
     //мои методы
-    public void lift(PaperWithText obj){
-        Viewer.view("поднял "+obj.getName());
+    public String lift(PaperWithText obj){
         obj.setIsLifted(true);
         this.inHandObject = obj;
+        return "поднял "+obj.getName();
     }
     @Override
     public String getName(){
         return this.name;
     }
 
-    public void readFromHand(){
-        Viewer.view("прочитал написанный на нём aдрес \"" +this.inHandObject.getText()+'"');
+    public String readFromHand(){
+        return "прочитал написанный на нём aдрес \"" +this.inHandObject.getText()+'"';
     }
 
     //технические методы

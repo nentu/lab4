@@ -5,7 +5,6 @@ import java.util.Objects;
 public class Head {
     public String getClassName(){return "Head";}
     private final static String  NAME = "голову";
-
     public String getName(){
         return NAME;
     }
@@ -14,6 +13,7 @@ public class Head {
     public String toString() {
         return getClassName()+"{name=\""+getName()+"\"}";
     }
+
 
     @Override
     public boolean equals(Object otherObject){
