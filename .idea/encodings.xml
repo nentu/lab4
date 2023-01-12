@@ -1,18 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="Encoding" defaultCharsetForPropertiesFiles="UTF-8">
+    <file url="file://$PROJECT_DIR$/src/story/Drigle.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/story/Friends.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/story/Goat.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/story/Main.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/story/abstractions/Character.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/story/abstractions/PaperWithText.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/story/abstractions/Place.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/story/abstractions/Сharacter.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/story/smth/Door.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/story/smth/Good.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/story/smth/Guns.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/story/smth/Houses.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/story/smth/Illumination.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/story/smth/PlaceWithDescrption.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/story/smth/Pronoun.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/story/smth/Rays.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/story/smth/Sash.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/story/smth/Showcase.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/story/smth/TypeOfIllumination.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/story/smth/TypeOfPlaсe.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/story/smth/TypeOfRays.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/story/smth/Сonsciousness.java" charset="UTF-8" />
     <file url="PROJECT" charset="windows-1251" />
   </component>
 </project>

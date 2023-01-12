@@ -2,21 +2,33 @@ package story;
 
 
 import story.abstractions.PaperWithText;
-import story.abstractions.Сharacter;
+import story.abstractions.Character;
+import story.abstractions.Thing;
 import story.smth.Address;
 
 import java.util.Objects;
 
 public class Letter extends PaperWithText{
+
+    static class Envelope extends Thing {
+        private final String name = "белый конверт";
+        public String getName(){
+            return this.name;
+        }
+
+        public String fallDown(){
+            return "из неё выпал " + getName();
+        }
+    }
     public String getClassName(){return "Letter";}
 
     private Address adr;
-    private Сharacter recipient;
+    private Character recipient;
     final String NAME = "письмо";
 
     private boolean isLifted = false;
 
-    public Letter(Address adr, Сharacter recipient){
+    public Letter(Address adr, Character recipient){
         this.adr = adr;
         this.recipient = recipient;
     }

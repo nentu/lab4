@@ -1,6 +1,7 @@
 package story;
 
 import story.abstractions.PaperWithText;
+import story.abstractions.Place;
 
 import java.util.Objects;
 
@@ -14,6 +15,10 @@ public class Goat extends OurFriend{
 
     }
 
+    public String roll(Place place){
+        return "из нее кубарем выкатятся на "+place.getPlaceName()+" "+getName();
+    }
+
     //мои методы
     public String lift(PaperWithText obj){
         obj.setIsLifted(true);
@@ -25,6 +30,14 @@ public class Goat extends OurFriend{
         return this.name;
     }
 
+    public String ask(String[] manner){
+        String manners = "";
+        for (int i =0; i < manner.length-1; i++){
+            manners += manner[i] + " и ";
+        }
+        manners +=manner[manner.length-1];
+        return String.format("%s %s спросил:", manners, getName());
+    }
     public String readFromHand(){
         return "прочитал написанный на нём aдрес \"" +this.inHandObject.getText()+'"';
     }

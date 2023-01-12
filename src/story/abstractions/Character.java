@@ -1,10 +1,9 @@
 package story.abstractions;
 
 
-import javax.print.DocFlavor;
 import java.util.Objects;
 
-public abstract class Сharacter {
+public abstract class Character {
 
     public abstract String getClassName();
     public abstract String getName();
@@ -25,8 +24,8 @@ public abstract class Сharacter {
     public boolean equals(Object otherObject){
         if (this == otherObject) return true;
         if (otherObject == null) return false;
-        if (otherObject instanceof Character){
-            Сharacter other = (Сharacter) otherObject;
+        if (otherObject instanceof java.lang.Character){
+            Character other = (Character) otherObject;
             return this.getName().equals(other.getName()) && this.getCurrentPlace().equals(other.getCurrentPlace());
         }
         else{

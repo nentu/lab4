@@ -1,10 +1,10 @@
 package story;
 import story.abstractions.Place;
-import story.abstractions.Сharacter;
+import story.abstractions.Character;
 
 import java.util.Objects;
 
-public class OurFriend extends Сharacter {
+public class OurFriend extends Character {
     public String getClassName(){return "OurFriend";}
     private final String NAME = "наши друзья";
     protected Place currentPlace = new Place("Начало");

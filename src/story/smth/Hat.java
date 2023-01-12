@@ -1,8 +1,10 @@
 package story.smth;
 
+import story.abstractions.Thing;
+
 import java.util.Objects;
 
-public class Hat {
+public class Hat extends Thing {
     public String getClassName(){return "Hat";}
 
     private final String NAME = "шляпу";

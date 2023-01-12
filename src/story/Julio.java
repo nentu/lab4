@@ -2,10 +2,10 @@ package story;
 
 
 import story.abstractions.Place;
-import story.abstractions.Сharacter;
+import story.abstractions.Character;
 import java.util.Objects;
 
-public class Julio extends Сharacter{
+public class Julio extends Character {
     public String getClassName(){return "Julio";}
 
     private String name = "Жулио";
