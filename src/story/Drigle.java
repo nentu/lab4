@@ -4,10 +4,11 @@ import story.abstractions.Character;
 import story.abstractions.Thing;
 
 public class Drigle extends Character {
-    private Place currentPlace = new Place("Здание");
-    private final String name = "Дригль";
-    @Override
-    public String getName(){return this.name;}
+
+    public Drigle(){
+        super("Дригль", new Place("Здание"));
+    }
+
 
     public String grab(Character character){
         return String.format("%s схватил %s за шиворот", getName(), character.getName());
@@ -24,15 +25,7 @@ public class Drigle extends Character {
     @Override
     public String getClassName(){return "Drigle";}
 
-    @Override
-    public Place getCurrentPlace(){
-        return this.currentPlace;
-    }
 
-    @Override
-    public void setCurrentPlace(Place place){
-        this.currentPlace = place;
-    }
 
 
 

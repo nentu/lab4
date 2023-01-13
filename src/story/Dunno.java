@@ -3,7 +3,6 @@ package story;
 import story.abstractions.Place;
 import story.abstractions.Thing;
 import story.abstractions.Character;
-import story.smth.Hat;
 import story.smth.Head;
 
 import java.util.Objects;
@@ -11,11 +10,38 @@ import java.util.Objects;
 public class Dunno extends OurFriend{
     public String getClassName(){return "Dunno";}
 
-    private final String name;
+    public static class Hat extends Thing{
+        public Hat(){
+            super("шляпу");
+        }
+        public String getClassName(){return "Hat";}
+
+
+        @Override
+        public String toString() {
+            return getClassName()+"{name=\""+getName()+"\"}";
+        }
+
+        @Override
+        public boolean equals(Object otherObject){
+            if (this == otherObject) return true;
+            if (!(otherObject instanceof Hat)) return false;
+            else {
+                Hat hat = (Hat) otherObject;
+                return getName().equals(hat.getName());
+            }
+        }
+
+        @Override
+        public int hashCode(){
+            return Objects.hash(getClassName(), getName());
+        }
+
+    }
 
 
     public Dunno(String name){
-        this.name = name;
+        super(name, new Place(""));
     }
 
     public String pull(Hat hat, Head head){
@@ -31,10 +57,7 @@ public class Dunno extends OurFriend{
     }
 
     public String fly(Place wherePlace){
-        return ", невзвидя света, полетел через "+wherePlace.getPlaceName()+", ";
-    }
-    public String getName(){
-        return this.name;
+        return ", невзвирая света, полетел через "+wherePlace.getPlaceName()+", ";
     }
 
     public String hideLetterAgain(Letter letter, Hat hat){

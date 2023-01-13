@@ -13,7 +13,7 @@ public class Main {
         Drigle drigle = new Drigle();
         Goat goat = new Goat("Козлик");
         Dunno dunno = new Dunno("Незнайка");
-        Hat hat = new Hat();
+        Dunno.Hat hat = new Dunno.Hat();
         Houses houses = new Houses();
         Rays rays = new Rays(TypeOfRays.LIGHT);
         OurFriend friend = new OurFriend();
@@ -25,22 +25,32 @@ public class Main {
         Guns guns = new Guns(new String[]{"различных систем и калибров", "стоявшие стройными рядами на специальных деревянных подставках"});
         Good good = new Good("товар");
         Showcase showcase = new Showcase();
+        Scarecrow policeScarecrow = new Scarecrow("полицейского", new Place("В правом углу"), " в полном обмундировании", new Good[]{
+                new Good("блестящей медной каской на голове"),
+                new Good("дубинкой в руке")
+        });
+        Scarecrow rubberScarecrow = new Scarecrow("грабителя", new Place("В левом углу"), ", подкрадывающегося к несгораемой кассе", new Good[]{
+                new Good("огромным пистолетом в одной руке"),
+                new Good("потайным электрическим фонарем в другой")
+        });
 
-        /*
+        Scarecrows pairOfScarecrows = new Scarecrows("Оба чучела",new Scarecrow[]{
+                policeScarecrow,
+                rubberScarecrow
+        });
+        Seller seller = new Seller("продавец", new Place("магазин"), "нижняя половина которого скрывалась за прилавком, верхняя же была одета в серую, скрадывающуюся на фоне серой стены фуфайку.");
+
+
+
         viewer.view(drigle.grab((Character) dunno));
 
         viewer.view(" и ");
 
         viewer.view(drigle.put());
 
-        viewer.view(drigle.hit(new Thing() {
-            @Override
-            public String getName() {
-                return "дубинкой";
-            }
-        }));
+        viewer.view(drigle.hit(new Good("дубинкой")));
 
-        viewer.view(" что "+dunno.getName()+"\n");
+        viewer.view(" что "+dunno.getName()+"");
 
         viewer.view(dunno.fly(new Place("всю комнату")));
 
@@ -52,7 +62,7 @@ public class Main {
 
         viewer.view(sash.open());
 
-        viewer.view(", и, \n");
+        viewer.view(", и, ");
 
         viewer.view(dunno.fallDown(new Place("мостовой")));
 
@@ -62,7 +72,7 @@ public class Main {
         viewer.view(". ");
 
         viewer.view(сonsciousness.comeBack());
-        viewer.view(", и \n");
+        viewer.view(", и ");
 
         viewer.view(Pronoun.He.wantGetUp());
 
@@ -72,7 +82,7 @@ public class Main {
         viewer.view(" и ");
 
         viewer.view(goat.roll(new Place("мостовую")));
-        viewer.view(".\n ");
+        viewer.view(". ");
 
         viewer.view(dunno.getName()+" ");
         viewer.view(dunno.jump());
@@ -85,14 +95,14 @@ public class Main {
         viewer.view(Pronoun.He.getUp());
         viewer.view(" и ");
         viewer.view(Pronoun.He.threaten(new Place("закрывшейся двери")));
-        viewer.view(". \n");
+        viewer.view(". ");
 
         viewer.view(dunno.getName()+' ');
         viewer.view(dunno.dontKnow( dunno.calmDown(goat) ) + ". ");
 
         viewer.view(goat.ask(new String[]{"Вытерев рукавом слезы", "немного успокоившись"}));
 
-        viewer.view(" В это время \n");
+        viewer.view(" В это время ");
 
         viewer.view(dunno.getName()+" ");
         viewer.view(dunno.raise(hat));
@@ -146,7 +156,7 @@ public class Main {
         viewer.view(houses.arrange(new Place("по обеим сторонам", TypeOfPlaсe.LANE, Case.GENITIVE), "так" +
                 " близко друг к другу"));
         
-        viewer.view(", что \n");
+        viewer.view(", что ");
 
 
         viewer.view(rays.getName() + " ");
@@ -164,32 +174,34 @@ public class Main {
                 " магазины."));
 
         viewer.view(illumination.reign());
-        */
+
 
         viewer.view(friends.enter(new Place("магазин"), "Увидев над дверью одного из магазинов вывеску с надписью \"Продажа разнокалиберных товаров\""));
-        viewer.view(" и только тогда \n");
+        viewer.view(" и только тогда ");
         viewer.view(friends.understand(", какого рода здесь продавались товары. "));
 
-        viewer.view(guns.jumpToEyes()+". \n");
+        viewer.view(guns.jumpToEyes()+". ");
 
         viewer.view(good.lay(new Place("прилавке")));
 
-        Good[] goods = new Good[]{
-                new Good("пистолеты"),
-                new Good("ножи"),
-                new Good("финки"),
-                new Good("кинжалы"),
-                new Good("кистени"),
-                new Good("кастеты")
-        };
+        {
+            Good[] goods = new Good[]{
+                    new Good("пистолеты"),
+                    new Good("ножи"),
+                    new Good("финки"),
+                    new Good("кинжалы"),
+                    new Good("кистени"),
+                    new Good("кастеты")
+            };
 
-        String textGoods = "";
-        for (int i = 0; i < goods.length - 1; i++){
-            textGoods += goods[i].getName() + ", ";
+            String textGoods = "";
+            for (int i = 0; i < goods.length - 1; i++) {
+                textGoods += goods[i].getName() + ", ";
+            }
+            textGoods += goods[goods.length - 1].getName();
+
+            viewer.view(textGoods + "");
         }
-        textGoods += goods[goods.length - 1].getName();
-
-        viewer.view(textGoods + "\n");
 
         viewer.view(showcase.build(new Place("вдоль стен"), new Good[]{
                 new Good("наборы воровских отмычек"),
@@ -202,13 +214,69 @@ public class Main {
                 new Good("автогенные аппараты для разрезания несгораемых шкафов и сундуков")
         }));
 
-        viewer.view("\nВ витрине, над которой имелась надпись \"Полицейская утварь\" ");
+        viewer.view("В витрине, над которой имелась надпись \"Полицейская утварь\" ");
 
-        viewer.view(showcase.put()+"\n");
+        viewer.view(showcase.put()+"");
 
         viewer.view(showcase.stayWithMask(new Good[]{
                 new Good("закрывают лишь верхнюю часть лица, с прорезами для глаз"),
                 new Good("надеваются целиком на голову, в виде островерхого капюшона")
         }));
+
+        viewer.view("Кроме масок, здесь были также ");
+
+        {
+            Good[] goods = new Good[]{
+                    new Good("грим"),
+                    new Good("парики"),
+                    new Good("накладные бороды"),
+                    new Good("усы")
+            };
+
+            String textGoods = "";
+            for (int i = 0; i < goods.length - 1; i++) {
+                textGoods += goods[i].getName() + ", ";
+            }
+            textGoods += goods[goods.length - 1].getName();
+
+            viewer.view(textGoods);
+        }
+
+        viewer.view("- все, что помогает изменить внешность.");
+
+        viewer.view(policeScarecrow.getFullDescription());
+        viewer.view(rubberScarecrow.getFullDescription());
+
+
+        viewer.view(new ThingWithDesc("пестрый клетчатый платок", new Place("его шее"), "").getFullDescription(Pronoun.He)+", ");
+        viewer.view(new ThingWithDesc("клетчатая кепка", new Place("голове"), "с широким козырьком")
+                .getFullDescription(Pronoun.She).toLowerCase()+", ");
+        viewer.view(new ThingWithDesc("клетчатые брюки", new Place("его ногах"), "облешающие тело")
+                .getFullDescription(Pronoun.They).toLowerCase()+", ");
+        viewer.view(new ThingWithDesc("черная маска", new Place("лице"), "")
+                .getFullDescription(Pronoun.She).toLowerCase()+".");
+
+
+        viewer.view(pairOfScarecrows.madeWithSkill("их можно было принять за настоящих живых коротышек")+". ");
+
+        viewer.view(friends.notice(seller, new Place("Среди этих удивительных экспонатов")) + "");
+
+        viewer.view(seller.stick("Пока в магазине никого не было", new Place("у себя за прилавком"),
+                new Character("паука", new Place()) {
+                    @Override
+                    public String getClassName() {
+                        return "Spider";
+                    }
+                    @Override
+                    public String getFullDescription(){
+                        return getName() + " терпеливо поджидающего, когда в его паутину попадет муха";
+                    }
+                }));
+
+        viewer.view(", но ");
+
+        viewer.view(seller.leanedForward(door.click(), "опершись о прилавок руками, словно собрался выскочить из-за него")+". ");
+
+        viewer.view(seller.say(seller.beWatched( friends.stop() ), ""));
     }
 }

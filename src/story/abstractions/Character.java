@@ -1,16 +1,30 @@
 package story.abstractions;
 
 
+import story.Seller;
+
 import java.util.Objects;
 
 public abstract class Character {
+    private String name;
+    private Place currentPlace;
 
+    public Character(String name, Place place){
+        this.name = name;
+        this.currentPlace = place;
+    }
+
+    public String getFullDescription(){
+        return getName()+" в "+getCurrentPlace().getPlaceName();
+    }
     public abstract String getClassName();
-    public abstract String getName();
+    public String getName(){return name;};
 
-    public abstract Place getCurrentPlace();
+    public Place getCurrentPlace(){return currentPlace;};
 
-    public abstract void setCurrentPlace(Place place);
+    public void setCurrentPlace(Place place){
+        currentPlace = place;
+    };
 
     @Override
     public String toString(){

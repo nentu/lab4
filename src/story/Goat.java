@@ -7,11 +7,10 @@ import java.util.Objects;
 
 public class Goat extends OurFriend{
     public String getClassName(){return "Goat";}
-    private String name = "Козёл";
     private PaperWithText inHandObject;
 
     public Goat(String name){
-        this.name = name;
+        super(name, new Place(""));
 
     }
 
@@ -25,10 +24,7 @@ public class Goat extends OurFriend{
         this.inHandObject = obj;
         return "поднял "+obj.getName();
     }
-    @Override
-    public String getName(){
-        return this.name;
-    }
+
 
     public String ask(String[] manner){
         String manners = "";

@@ -11,9 +11,9 @@ import java.util.Objects;
 public class Letter extends PaperWithText{
 
     static class Envelope extends Thing {
-        private final String name = "белый конверт";
-        public String getName(){
-            return this.name;
+
+        public Envelope(){
+            super("белый конверт");
         }
 
         public String fallDown(){
@@ -24,7 +24,7 @@ public class Letter extends PaperWithText{
 
     private Address adr;
     private Character recipient;
-    final String NAME = "письмо";
+    private final String NAME = "письмо";
 
     private boolean isLifted = false;
 

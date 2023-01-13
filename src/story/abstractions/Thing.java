@@ -3,7 +3,13 @@ package story.abstractions;
 import java.util.Objects;
 
 public abstract class Thing {
-    public abstract String getName();
+    private String name;
+    protected Thing(String name){
+        this.name = name;
+    }
+    public String getName(){
+        return name;
+    };
 
     @Override
     public int hashCode() {

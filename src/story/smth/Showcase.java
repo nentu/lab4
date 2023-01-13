@@ -21,13 +21,11 @@ public class Showcase {
 
     public String put(){
         class PoliceItems extends Thing{
-            private String name;
             public PoliceItems(String name){
-                this.name = name;
+                super(name);
             }
-
             public String getName(){
-                return this.name;
+                return super.getName();
             }
         }
 

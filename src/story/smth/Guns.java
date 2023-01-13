@@ -7,10 +7,10 @@ import story.abstractions.Thing;
 import java.util.Objects;
 
 public class Guns extends Thing {
-    private final String name = "ружья";
     private String desc[];
 
     public Guns(String[] desc){
+        super("ружья");
         this.desc = desc;
     }
 
@@ -24,12 +24,6 @@ public class Guns extends Thing {
     }
     public String jumpToEyes(){
         return String.format("Первое, что сразу бросалось в глаза, были %s %s", getName(), getFullDescription());
-    }
-
-
-
-    public String getName(){
-        return name;
     }
 
     public String toString() {

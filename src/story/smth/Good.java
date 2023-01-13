@@ -6,13 +6,9 @@ import story.abstractions.Thing;
 import java.util.Objects;
 
 public class Good extends Thing {
-    private String name;
-    public String getName(){
-        return name;
-    }
 
     public Good(String name){
-        this.name = name;
+        super(name);
     }
 
     public String lay(Place place){
@@ -26,7 +22,7 @@ public class Good extends Thing {
 
     @Override
     public String toString() {
-        return "Good[]";
+        return "Good["+getName()+"]";
     }
 
     @Override

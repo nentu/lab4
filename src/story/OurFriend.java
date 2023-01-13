@@ -6,10 +6,14 @@ import java.util.Objects;
 
 public class OurFriend extends Character {
     public String getClassName(){return "OurFriend";}
-    private final String NAME = "наши друзья";
-    protected Place currentPlace = new Place("Начало");
+
 
     public OurFriend() {
+        super("наши друзья", new Place("Начало"));
+    }
+
+    public OurFriend(String name, Place place) {
+        super(name, place);
     }
 
     //перемещения
@@ -24,17 +28,6 @@ public class OurFriend extends Character {
     }
 
     //Setters, Getters
-    public Place getCurrentPlace() {
-        return currentPlace;
-    }
-
-    public void setCurrentPlace(Place currentPlace) {
-        this.currentPlace = currentPlace;
-    }
-    public String getName(){
-        return NAME;
-    }
-
     //Others
     @Override
     public String toString() {

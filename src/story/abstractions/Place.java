@@ -19,6 +19,10 @@ public class Place {
         this.placeTypeCase = cases;
     }
 
+    public Place(){
+        this.placeName = "";
+    }
+
     public Place(String placeName){
         this.placeName = placeName;
     }

@@ -5,11 +5,11 @@ import story.abstractions.Thing;
 import java.util.Objects;
 
 public class Head extends Thing {
-    public String getClassName(){return "Head";}
-    private final static String  NAME = "голову";
-    public String getName(){
-        return NAME;
+
+    public Head(){
+        super("голову");
     }
+    public String getClassName(){return "Head";}
 
     @Override
     public String toString() {

@@ -8,27 +8,12 @@ import java.util.Objects;
 public class Julio extends Character {
     public String getClassName(){return "Julio";}
 
-    private String name = "Жулио";
     private String estate;
 
-    private Place currentPlace;
-
-    public Place getCurrentPlace() {
-        return currentPlace;
-    }
-
-    public void setCurrentPlace(Place currentPlace) {
-        this.currentPlace = currentPlace;
-    }
-
     public Julio(String name, String estate){
-        this.name = name;
-        this.estate = estate;
+        super(name, new Place(""));
     }
 
-    public String getName(){
-        return estate+" "+this.name;
-    }
 
     @Override
     public String toString(){

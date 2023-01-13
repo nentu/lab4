@@ -6,10 +6,9 @@ import story.abstractions.Thing;
 import java.util.Objects;
 
 public class Sash extends Thing {
-    private final String name = "обе створки";
 
-    public String getName(){
-        return this.name;
+    public Sash(){
+        super("обе створки");
     }
 
     public String open(){

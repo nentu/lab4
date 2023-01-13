@@ -2,14 +2,14 @@ package story.smth;
 
 import story.abstractions.Thing;
 
+import java.util.Comparator;
 import java.util.Objects;
 
 public class Сonsciousness extends Thing {
-    private final String name = "сознание";
-
-    public String getName(){
-        return this.name;
+    public Сonsciousness(){
+        super("сознание");
     }
+
 
     public String comeBack(){
         return "Постепенно "+getName()+" вернулось к нему";

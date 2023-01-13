@@ -2,7 +2,6 @@ package story;
 
 import story.abstractions.Character;
 import story.abstractions.Place;
-import story.smth.Hat;
 
 import java.util.Objects;
 
@@ -27,8 +26,16 @@ public class Friends {
 
     }
 
+    public String stop(){
+        return getNames()+" в нерешительности остановились";
+    }
+
     public String understand(String smth){
         return "поняли "+smth;
+    }
+
+    public String notice(Character character, Place place){
+        return String.format("%s %s как-то не сразу заметили %s", place.getPlaceName(), getNames(), character.getFullDescription());
     }
 
     public String toString() {
@@ -60,6 +67,8 @@ public class Friends {
     public int hashCode(){
         return Objects.hash(this.name, friends);
     }
+
+
 
 
 }

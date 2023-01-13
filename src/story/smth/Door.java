@@ -5,14 +5,16 @@ import story.abstractions.Thing;
 import java.util.Objects;
 
 public class Door extends Thing {
-    private final String name = "дверь";
-
-    public String getName(){
-        return this.name;
+    public Door(){
+        super("дверь");
     }
 
     public String open(){
         return getName()+" полицейского управления опять распахнулась";
+    }
+
+    public String click(){
+        return getName()+ " щёлкнула";
     }
 
     @Override
@@ -23,6 +25,7 @@ public class Door extends Thing {
         Door dunno = (Door) otherObject;
         return Objects.equals(getName(), dunno.getName());
     }
+
 
     @Override
     public int hashCode() {
