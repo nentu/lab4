@@ -3,14 +3,14 @@ package story.smth;
 import story.abstractions.Place;
 
 public enum Pronoun {
-    He("Он", "был"){
+    HE("Он", "был"){
         public String notRecover(){
             return "От удара и от действия электричества "+this.getName()+" некоторое время не мог прийти в себя";
         }
         public String wantGetUp(){
             return this.getName()+" уже хотел подняться на ноги";
         }
-    }, She("Она", "была"), It("Оно","было"), They("Они", "были");
+    }, SHE("Она", "была"), IT("Оно","было"), THEY("Они", "были");
 
     private String name;
     private String be;

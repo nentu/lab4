@@ -3,6 +3,8 @@ package story.smth;
 import story.abstractions.Place;
 import story.abstractions.Thing;
 
+import java.util.Objects;
+
 public class Showcase {
     private String name = "освещенные изнутри витрины";
     private Place place;
@@ -26,6 +28,26 @@ public class Showcase {
             }
             public String getName(){
                 return super.getName();
+            }
+
+            @Override
+            public boolean equals(Object otherObject) {
+                if (this == otherObject) return true;
+                if (!(otherObject instanceof Door)) return false;
+                if (!super.equals(otherObject)) return false;
+                PoliceItems dunno = (PoliceItems) otherObject;
+                return Objects.equals(getName(), dunno.getName());
+            }
+
+
+            @Override
+            public int hashCode() {
+                return Objects.hash(super.hashCode(), getName());
+            }
+
+            @Override
+            public String toString() {
+                return "PoliceItems[name="+name+"]";
             }
         }
 
@@ -53,5 +75,28 @@ public class Showcase {
         textMasks += "и такие, которые "+masks[masks.length - 1].getName()+".";
 
         return "Тут же находилась витрина, в которой были выставлены различные маски: "+textMasks;
+    }
+
+    @Override
+    public boolean equals(Object otherObject) {
+        if (this == otherObject) return true;
+        if (!(otherObject instanceof Showcase)) return false;
+        if (!super.equals(otherObject)) return false;
+        Showcase dunno = (Showcase) otherObject;
+        return name.equals(dunno.name) && place.equals(dunno.place);
+    }
+
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(super.hashCode(), name, place);
+    }
+
+    @Override
+    public String toString() {
+        return "Showcase[" +
+                "name='" + name + '\'' +
+                ", place=" + place +
+                ']';
     }
 }

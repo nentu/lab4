@@ -3,7 +3,6 @@ package story;
 import story.abstractions.Character;
 import story.abstractions.Time;
 import story.abstractions.Place;
-import story.abstractions.Thing;
 import story.smth.*;
 
 public class Main {
@@ -20,7 +19,12 @@ public class Main {
         Sash sash = new Sash();
         Сonsciousness сonsciousness = new Сonsciousness();
         Door door = new Door();
-        Letter.Envelope envelope = new story.Letter.Envelope();
+        Letter letter = new Letter(new Address(new Place("Крученая", TypeOfPlaсe.STREET, Case.NOMINATIVE),
+                new Place("Змеиный", TypeOfPlaсe.LANE, Case.NOMINATIVE), 6),
+
+                new Julio("Жулио", "владельцу магазина разнокалиберных товаров господину"));
+
+        Letter.Envelope envelope = letter.new Envelope();
         Friends friends = new Friends(new Character[]{dunno, goat});
         Guns guns = new Guns(new String[]{"различных систем и калибров", "стоявшие стройными рядами на специальных деревянных подставках"});
         Good good = new Good("товар");
@@ -68,13 +72,13 @@ public class Main {
 
         viewer.view(". ");
 
-        viewer.view(Pronoun.He.notRecover());
+        viewer.view(Pronoun.HE.notRecover());
         viewer.view(". ");
 
         viewer.view(сonsciousness.comeBack());
         viewer.view(", и ");
 
-        viewer.view(Pronoun.He.wantGetUp());
+        viewer.view(Pronoun.HE.wantGetUp());
 
         viewer.view(", как вдруг увидел, что ");
         viewer.view(door.open());
@@ -92,9 +96,9 @@ public class Main {
         viewer.view(dunno.startHelp());
         viewer.view(". ");
 
-        viewer.view(Pronoun.He.getUp());
+        viewer.view(Pronoun.HE.getUp());
         viewer.view(" и ");
-        viewer.view(Pronoun.He.threaten(new Place("закрывшейся двери")));
+        viewer.view(Pronoun.HE.threaten(new Place("закрывшейся двери")));
         viewer.view(". ");
 
         viewer.view(dunno.getName()+' ');
@@ -111,10 +115,6 @@ public class Main {
 
         viewer.view(goat.getName()+" ");
 
-        Letter letter = new Letter(new Address(new Place("Крученая", TypeOfPlaсe.STREET, Case.NOMINATIVE),
-                new Place("Змеиный", TypeOfPlaсe.LANE, Case.NOMINATIVE), 6),
-
-                new Julio("Жулио", "владельцу магазина разнокалиберных товаров господину"));
 
 
         viewer.view(goat.lift(letter));
@@ -248,13 +248,13 @@ public class Main {
         viewer.view(rubberScarecrow.getFullDescription());
 
 
-        viewer.view(new ThingWithDesc("пестрый клетчатый платок", new Place("его шее"), "").getFullDescription(Pronoun.He)+", ");
+        viewer.view(new ThingWithDesc("пестрый клетчатый платок", new Place("его шее"), "").getFullDescription(Pronoun.HE)+", ");
         viewer.view(new ThingWithDesc("клетчатая кепка", new Place("голове"), "с широким козырьком")
-                .getFullDescription(Pronoun.She).toLowerCase()+", ");
+                .getFullDescription(Pronoun.SHE).toLowerCase()+", ");
         viewer.view(new ThingWithDesc("клетчатые брюки", new Place("его ногах"), "облешающие тело")
-                .getFullDescription(Pronoun.They).toLowerCase()+", ");
+                .getFullDescription(Pronoun.THEY).toLowerCase()+", ");
         viewer.view(new ThingWithDesc("черная маска", new Place("лице"), "")
-                .getFullDescription(Pronoun.She).toLowerCase()+".");
+                .getFullDescription(Pronoun.SHE).toLowerCase()+".");
 
 
         viewer.view(pairOfScarecrows.madeWithSkill("их можно было принять за настоящих живых коротышек")+". ");

@@ -5,12 +5,13 @@ import story.abstractions.PaperWithText;
 import story.abstractions.Character;
 import story.abstractions.Thing;
 import story.smth.Address;
+import story.smth.Door;
 
 import java.util.Objects;
 
 public class Letter extends PaperWithText{
 
-    static class Envelope extends Thing {
+    class Envelope extends Thing {
 
         public Envelope(){
             super("белый конверт");
@@ -18,6 +19,20 @@ public class Letter extends PaperWithText{
 
         public String fallDown(){
             return "из неё выпал " + getName();
+        }
+        @Override
+        public boolean equals(Object otherObject) {
+            return otherObject instanceof Envelope;
+        }
+
+        @Override
+        public int hashCode() {
+            return Objects.hash(super.hashCode(), "Envelope");
+        }
+
+        @Override
+        public String toString() {
+            return super.toString();
         }
     }
     public String getClassName(){return "Letter";}

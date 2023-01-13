@@ -11,6 +11,7 @@
     <file url="file://$PROJECT_DIR$/src/story/abstractions/Character.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/story/abstractions/PaperWithText.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/story/abstractions/Place.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/story/interfaces/delete.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/story/smth/Door.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/story/smth/Good.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/story/smth/Guns.java" charset="UTF-8" />

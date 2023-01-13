@@ -8,7 +8,7 @@ import java.util.Objects;
 
 public class Seller extends Character{
     private String desc;
-    private Pronoun pronoun = Pronoun.He;
+    private Pronoun pronoun = Pronoun.HE;
     public Seller(String name, Place currentPlace, String description){
         super(name, currentPlace);
         desc = description;
