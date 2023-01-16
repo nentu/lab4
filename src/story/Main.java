@@ -1,8 +1,10 @@
 package story;
 
 import story.abstractions.Character;
+import story.abstractions.Thing;
 import story.abstractions.Time;
 import story.abstractions.Place;
+import story.Exceptions.CantReadException;
 import story.smth.*;
 
 public class Main {
@@ -12,12 +14,11 @@ public class Main {
         Drigle drigle = new Drigle();
         Goat goat = new Goat("Козлик");
         Dunno dunno = new Dunno("Незнайка");
-        Dunno.Hat hat = new Dunno.Hat();
+        Hat hat = new Hat();
         Houses houses = new Houses();
         Rays rays = new Rays(TypeOfRays.LIGHT);
         OurFriend friend = new OurFriend();
         Sash sash = new Sash();
-        Сonsciousness сonsciousness = new Сonsciousness();
         Door door = new Door();
         Letter letter = new Letter(new Address(new Place("Крученая", TypeOfPlaсe.STREET, Case.NOMINATIVE),
                 new Place("Змеиный", TypeOfPlaсe.LANE, Case.NOMINATIVE), 6),
@@ -75,7 +76,7 @@ public class Main {
         viewer.view(Pronoun.HE.notRecover());
         viewer.view(". ");
 
-        viewer.view(сonsciousness.comeBack());
+        viewer.view(Dunno.Consciousness.comeBack());
         viewer.view(", и ");
 
         viewer.view(Pronoun.HE.wantGetUp());
@@ -121,7 +122,16 @@ public class Main {
 
         viewer.view(" и ");
 
-        viewer.view(goat.readFromHand());
+        try {
+            viewer.view(goat.readFromHand());
+        }
+        catch (CantReadException e){
+            Object t = e.getThing();
+            if (t instanceof Thing)
+                viewer.view("Не может прочитать "+((Thing) t).getName());
+            else
+                viewer.view("Не может прочитать "+t.toString());
+        }
 
         viewer.view(". ");
 
@@ -132,7 +142,6 @@ public class Main {
         viewer.view(dunno.hideLetterAgain(letter, hat));
 
         viewer.view(", а ");
-
         viewer.view(dunno.pull(hat, new Head()));
 
         viewer.view(". ");
@@ -216,7 +225,12 @@ public class Main {
 
         viewer.view("В витрине, над которой имелась надпись \"Полицейская утварь\" ");
 
-        viewer.view(showcase.put()+"");
+        viewer.view(showcase.putPoliceItems(new String[]{
+                "резиновые электрические дубинки разных фасонов",
+                "стальные наручники",
+                "кандалы",
+                "зажигательные и слезоточивые бомбы и другие предметы полицейского обихода"
+        })+"");
 
         viewer.view(showcase.stayWithMask(new Good[]{
                 new Good("закрывают лишь верхнюю часть лица, с прорезами для глаз"),

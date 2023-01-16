@@ -2,12 +2,15 @@ package story;
 
 import story.abstractions.PaperWithText;
 import story.abstractions.Place;
+import story.Exceptions.CantReadException;
+import story.interfaces.Liftable;
+import story.interfaces.Readable;
 
 import java.util.Objects;
 
 public class Goat extends OurFriend{
     public String getClassName(){return "Goat";}
-    private PaperWithText inHandObject;
+    private Liftable inHandObject;
 
     public Goat(String name){
         super(name, new Place(""));
@@ -19,10 +22,10 @@ public class Goat extends OurFriend{
     }
 
     //мои методы
-    public String lift(PaperWithText obj){
+    public String lift(Liftable obj){
         obj.setIsLifted(true);
         this.inHandObject = obj;
-        return "поднял "+obj.getName();
+        return "поднял "+((PaperWithText) obj).getName();
     }
 
 
@@ -34,8 +37,12 @@ public class Goat extends OurFriend{
         manners +=manner[manner.length-1];
         return String.format("%s %s спросил:", manners, getName());
     }
-    public String readFromHand(){
-        return "прочитал написанный на нём aдрес \"" +this.inHandObject.getText()+'"';
+    public String readFromHand() throws CantReadException {
+        if (this.inHandObject instanceof Readable)
+            return "прочитал написанный на нём aдрес \"" +((Readable) this.inHandObject).getText()+'"';
+        else{
+            throw new CantReadException(inHandObject);
+        }
     }
 
     //технические методы

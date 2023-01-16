@@ -21,13 +21,19 @@ public class Showcase {
         return String.format("%s были устроены %s, в которых, словно на выставке, красовались %s", place.getPlaceName(), this.name, textGoods);
     }
 
-    public String put(){
+    public String putPoliceItems(String[] names){
+
         class PoliceItems extends Thing{
+            private int id;
+            private static int nextId = 4653786;
             public PoliceItems(String name){
                 super(name);
+                this.id = nextId;
+                nextId += 1;
             }
-            public String getName(){
-                return super.getName();
+
+            public int getId() {
+                return this.id;
             }
 
             @Override
@@ -36,7 +42,7 @@ public class Showcase {
                 if (!(otherObject instanceof Door)) return false;
                 if (!super.equals(otherObject)) return false;
                 PoliceItems dunno = (PoliceItems) otherObject;
-                return Objects.equals(getName(), dunno.getName());
+                return getName().equals(dunno.getName()) && getId() == dunno.getId();
             }
 
 
@@ -47,16 +53,14 @@ public class Showcase {
 
             @Override
             public String toString() {
-                return "PoliceItems[name="+name+"]";
+                return "PoliceItems[name="+getName()+"]";
             }
         }
 
-        PoliceItems[] policeItems = new PoliceItems[]{
-                new PoliceItems("резиновые электрические дубинки разных фасонов"),
-                new PoliceItems("стальные наручники"),
-                new PoliceItems("кандалы"),
-                new PoliceItems("зажигательные и слезоточивые бомбы и другие предметы полицейского обихода")
-            };
+        PoliceItems[] policeItems = new PoliceItems[names.length];
+
+        for (int i = 0;i<names.length;i++)
+            policeItems[i] = new PoliceItems(names[i]);
 
         String textItems = "";
         for (int i = 0; i < policeItems.length - 1; i++){

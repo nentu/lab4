@@ -1,14 +1,19 @@
 package story.abstractions;
 
+import story.Exceptions.BadNameException;
+
 import java.util.Objects;
 
-public abstract class Thing {
+public class Thing {
     private String name;
     protected Thing(String name){
         this.name = name;
     }
-    public String getName(){
-        return name;
+    public String getName() throws BadNameException {
+        if (!name.isEmpty())
+            return name;
+        else
+            throw new BadNameException("");
     };
 
     @Override

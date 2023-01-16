@@ -3,40 +3,42 @@ package story;
 import story.abstractions.Place;
 import story.abstractions.Thing;
 import story.abstractions.Character;
-import story.smth.Head;
+import story.smth.Hat;
 
 import java.util.Objects;
 
 public class Dunno extends OurFriend{
     public String getClassName(){return "Dunno";}
 
-    public static class Hat extends Thing{
-        public Hat(){
-            super("шляпу");
+    public static class Consciousness extends Thing {
+        private static String name = "сознание";
+        public Consciousness(){
+            super(name);
         }
-        public String getClassName(){return "Hat";}
 
+
+        public static String comeBack(){
+            return "Постепенно "+name+" вернулось к нему";
+        }
+
+        @Override
+        public boolean equals(Object otherObject) {
+            if (this == otherObject) return true;
+            if (!(otherObject instanceof Consciousness)) return false;
+            if (!super.equals(otherObject)) return false;
+            Consciousness dunno = (Consciousness) otherObject;
+            return Objects.equals(getName(), dunno.getName());
+        }
+
+        @Override
+        public int hashCode() {
+            return Objects.hash(super.hashCode(), getName());
+        }
 
         @Override
         public String toString() {
-            return getClassName()+"{name=\""+getName()+"\"}";
+            return super.toString();
         }
-
-        @Override
-        public boolean equals(Object otherObject){
-            if (this == otherObject) return true;
-            if (!(otherObject instanceof Hat)) return false;
-            else {
-                Hat hat = (Hat) otherObject;
-                return getName().equals(hat.getName());
-            }
-        }
-
-        @Override
-        public int hashCode(){
-            return Objects.hash(getClassName(), getName());
-        }
-
     }
 
 
@@ -44,7 +46,7 @@ public class Dunno extends OurFriend{
         super(name, new Place(""));
     }
 
-    public String pull(Hat hat, Head head){
+    public String pull(Hat hat, Thing head){
         return String.format("%s натянул потуже на %s", hat.getName(), head.getName());
     }
 
