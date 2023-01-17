@@ -3,7 +3,6 @@ package story;
 import story.abstractions.Place;
 import story.abstractions.Thing;
 import story.abstractions.Character;
-import story.smth.Hat;
 
 import java.util.Objects;
 
@@ -46,7 +45,7 @@ public class Dunno extends OurFriend{
         super(name, new Place(""));
     }
 
-    public String pull(Hat hat, Thing head){
+    public String pull(Thing hat, Thing head){
         return String.format("%s натянул потуже на %s", hat.getName(), head.getName());
     }
 
@@ -62,7 +61,7 @@ public class Dunno extends OurFriend{
         return ", невзвирая света, полетел через "+wherePlace.getPlaceName()+", ";
     }
 
-    public String hideLetterAgain(Letter letter, Hat hat){
+    public String hideLetterAgain(Letter letter, Thing hat){
         return String.format("спрятал %s обратно в %s", letter.getName(), hat.getName());
     }
 

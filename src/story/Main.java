@@ -14,7 +14,8 @@ public class Main {
         Drigle drigle = new Drigle();
         Goat goat = new Goat("Козлик");
         Dunno dunno = new Dunno("Незнайка");
-        Hat hat = new Hat();
+        Thing hat = new Thing("шляпу");
+        Thing head = new Thing("голову");
         Houses houses = new Houses();
         Rays rays = new Rays(TypeOfRays.LIGHT);
         OurFriend friend = new OurFriend();
@@ -47,7 +48,7 @@ public class Main {
 
 
 
-        viewer.view(drigle.grab((Character) dunno));
+        viewer.view(drigle.grab(dunno));
 
         viewer.view(" и ");
 
@@ -59,7 +60,7 @@ public class Main {
 
         viewer.view(dunno.fly(new Place("всю комнату")));
 
-        viewer.view(dunno.bump(new Head(), door));
+        viewer.view(dunno.bump(head, door));
 
         viewer.view(", отчего ");
 
@@ -142,7 +143,7 @@ public class Main {
         viewer.view(dunno.hideLetterAgain(letter, hat));
 
         viewer.view(", а ");
-        viewer.view(dunno.pull(hat, new Head()));
+        viewer.view(dunno.pull(hat, head));
 
         viewer.view(". ");
 

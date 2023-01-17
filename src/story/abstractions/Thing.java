@@ -6,7 +6,7 @@ import java.util.Objects;
 
 public class Thing {
     private String name;
-    protected Thing(String name){
+    public Thing(String name){
         this.name = name;
     }
     public String getName() throws BadNameException {
