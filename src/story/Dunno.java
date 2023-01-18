@@ -10,7 +10,7 @@ public class Dunno extends OurFriend{
     public String getClassName(){return "Dunno";}
 
     public static class Consciousness extends Thing {
-        private static String name = "сознание";
+        public static String name = "сознание";
         public Consciousness(){
             super(name);
         }
